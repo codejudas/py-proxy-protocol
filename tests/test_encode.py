@@ -15,7 +15,7 @@ class EncodeV1Test(unittest.TestCase):
         expected_header =  b'\x20'
         expected_header += b'\x31\x30\x30\x30\x20'              # '1000'
         expected_header =  b'\x20'
-        expected_header += b'\x38\x30'                          # '1000'
+        expected_header += b'\x38\x30'                          # '80'
         expected_header += b'\x0d\x0a'                          # '\r\n'
 
         self.assertEquals(expected_header, header)

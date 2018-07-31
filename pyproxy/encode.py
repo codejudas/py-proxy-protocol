@@ -1,3 +1,6 @@
+"""
+This file contains methods and utilities for encoding a proxy protocol header
+"""
 
 def encode_v1(protocol, src_ip, dst_ip, src_port, dst_port):
     """
