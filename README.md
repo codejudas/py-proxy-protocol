@@ -13,6 +13,7 @@ Current features provided by the library:
 
 Future features:
 - Create a socket that speaks Proxy Protocol V2 (binary)
+- Urllib3 and Requests plugins/helpers if I have time.
 
 ### Installation
 
@@ -22,3 +23,17 @@ $ pip install py-proxy-protocol
 ```
 
 And watch as nothing happens as this package is not published on pypi yet.
+
+### Contributing
+
+I've been working on this in my spare time, as such there are no guarantees on when/if features will be added or bugs will be fixed. Want something? Make a PR! I promise i'll look at it and merge it if its half-way decent.
+
+Commands to get started:
+```
+$ make install
+```
+
+To run unit and integration tests:
+```
+$ make test
+```
