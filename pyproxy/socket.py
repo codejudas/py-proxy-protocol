@@ -57,7 +57,6 @@ class ProxyProtocolSocket(socket.socket):
             raise NotImplementedError('TODO: Implement v2')
 
         self.sendall(header)
-        # self.flush()
 
     def connect(self, address):
         """
