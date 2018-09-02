@@ -1,10 +1,13 @@
-.PHONY: test, nopyc, test-server, install, clean
+.PHONY: unit-test, integration-test, test, test-install, nopyc, test-server, install, clean
 
 venv:
 	virtualenv venv
 
-install: venv
-	python setup.py install
+install: venv nopyc
+	. venv/bin/activate; python setup.py install
+
+test-install: venv nopyc
+	. venv/bin/activate; pip install -r test_requirements.txt
 
 nopyc:
 	find . -iname '*.pyc' | xargs rm
@@ -12,8 +15,13 @@ nopyc:
 clean: nopyc
 	rm -rf venv
 
-test: nopyc
-	python -m unittest discover -s tests
+unit-test: nopyc
+	. venv/bin/activate; python -m unittest discover -s tests/unit
+
+integration-test: nopyc
+	. venv/bin/activate; python -m unittest discover -s tests/integration
+
+test: unit-test integration-test
 
 test-server:
 	sudo pkill nginx

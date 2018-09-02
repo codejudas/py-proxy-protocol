@@ -1,4 +1,9 @@
 *.pyc
 .vscode
 venv
+.idea
+.eggs
+pyproxy.egg-info
+dist
+build
 test.py
